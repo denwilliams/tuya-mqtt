@@ -23,11 +23,15 @@ mqtt:
   # Prefix for inbound/outbound MQTT topic
   prefix: tuya
 service:
-  region: "us" # cn, eu, us. choose the closest.
-  countryCode: "1" # Your account country code, e.g., 1 for USA or 86 for China
-  bizType: "smart_life" # tuya, smart_life, etc
-  username: "youremail@example.com" # Could also be a phone number
-  password: "yourpassword" # suggest creating a service account for this and not using your main account
+  countryCode: 61 # Your account country code, e.g., 1 for USA or 86 for China
+  projectType: "2" # Typically 2
+  appSchema: "smartlife" # tuya, smartlife
+  accessId: "" # Your Tuya access ID
+  accessKey: "" # Your Tuya access key
+  username: "youremail@example.com"
+  password: "yourpassword"
+  lang: "en"
+  debug: false
 ```
 
 ## Notes
