@@ -30,6 +30,8 @@ async function main() {
 
   client.on("device", (e) => {
     service.send(`~/status/${e.id}`, e);
+    service.send(`~/status/${e.id}/name`, e.name);
+    service.send(`~/status/${e.id}/category`, e.categoryName);
   });
   client.on("status", (e) => {
     for (const status of e.status) {
