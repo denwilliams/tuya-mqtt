@@ -206,7 +206,9 @@ export class TuyaClient extends EventEmitter {
       categoryName: getDeviceCategoryName(device.category),
       functions: device.functions,
     });
-    this.emitDeviceStatus(device.id, device.status);
+    if (device.status && device.status.length > 0) {
+      this.emitDeviceStatus(device.id, device.status);
+    }
   }
 
   //Handle device deletion, addition, status update
