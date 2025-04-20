@@ -25,8 +25,14 @@ async function main() {
 
   client.on("device", (e) => {
     service.send(`~/status/${e.id}`, e);
-    service.send(`~/status/${e.id}/name`, e.name);
-    service.send(`~/status/${e.id}/category`, e.categoryName);
+    service.send(`~/status/${e.id}/name`, e.name, {
+      qos: 1,
+      retain: true,
+    });
+    service.send(`~/status/${e.id}/category`, e.categoryName, {
+      qos: 1,
+      retain: true,
+    });
   });
   client.on("status", (e) => {
     for (const status of e.status) {
