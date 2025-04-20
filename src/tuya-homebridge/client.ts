@@ -230,7 +230,7 @@ export class TuyaClient extends EventEmitter {
   }
 
   private async emitDeviceStatus(deviceId: string, status: DeviceStatus[]) {
-    this.emit("status", { deviceId, status });
+    this.emit("status", { id: deviceId, status });
   }
 
   async sendCommand(deviceId: string, code: string, value: unknown) {
