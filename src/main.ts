@@ -10,9 +10,6 @@ async function startTuya(config: Config) {
 
   const client = new TuyaClient(config);
   await client.init();
-
-  await client.sendCommand("22110718a4e57c87aa7b", "light", false);
-
   return client;
 }
 
