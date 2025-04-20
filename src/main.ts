@@ -8,9 +8,7 @@ import { Config } from "./tuya-homebridge/config";
 async function startTuya(config: Config) {
   console.log("Creating client");
 
-  const client = new TuyaClient(config);
-  await client.init();
-  return client;
+  return new TuyaClient(config);
 }
 
 async function main() {
@@ -53,6 +51,8 @@ async function main() {
   });
 
   service.subscribe("~/set/#");
+
+  await client.init();
 }
 
 main().catch((err) => {
